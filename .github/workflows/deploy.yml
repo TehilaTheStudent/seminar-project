@@ -41,5 +41,5 @@ jobs:
         key: ${{ secrets.EC2_KEY }}
         script: |
           sudo rm -rf /var/www/html/*
-          sudo cp -r /tmp/my-angular-app/* /var/www/html/
+          sudo cp -r /tmp/my-angular-app/dist/my-angular-app/* /var/www/html/
           sudo systemctl reload nginx
