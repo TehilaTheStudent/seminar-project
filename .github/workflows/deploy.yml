@@ -31,7 +31,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_KEY }}
         source: "dist/my-angular-app/*"
-        target: "/tmp/my-angular-app"
+        target: "/tmp/my-angular-app/"
 
     - name: Move files to NGINX directory
       uses: appleboy/ssh-action@v0.1.7
