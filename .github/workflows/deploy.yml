@@ -31,7 +31,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_KEY }}
         source: "dist/my-angular-app/**"
-        target: "/tmp/angular-build"
+        target: "/tmp/my-angular-app"
 
     - name: Move files to NGINX directory
       uses: appleboy/ssh-action@v0.1.7
@@ -41,5 +41,5 @@ jobs:
         key: ${{ secrets.EC2_KEY }}
         script: |
           sudo rm -rf /var/www/html/*
-          sudo cp -r /tmp/angular-build/* /var/www/html/
+          sudo cp -r /tmp/my-angular-app/* /var/www/html/
           sudo systemctl reload nginx
